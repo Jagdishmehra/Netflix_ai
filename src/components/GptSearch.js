@@ -12,7 +12,7 @@ const GptSearch = () => {
       
         <img src={LOGO_IMG} alt='bg-image'/>
       
-      <div className='bg-black'><GptSearchBar/></div>
+      <GptSearchBar/>
     </div>
   )
 }

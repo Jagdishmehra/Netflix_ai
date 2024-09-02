@@ -31,7 +31,6 @@ const GptSearchBar = () => {
      //console.log(text);
     const movie=text.split(',')
     //console.log(movie);
-    // setlocal(movie);
     const promisearray= movie.map((m)=>tmdbSearch(m))
 
     const tmdbresults=await Promise.all(promisearray);
@@ -41,9 +40,9 @@ const GptSearchBar = () => {
     }
 
   return (
-    <>
+    <div>
     <div className='-mt-[45%] flex justify-center '>
-      <form className='bg-black p-4 grid grid-cols-12 w-1/2' onSubmit={(e)=>e.preventDefault()}>
+      <form className='bg-black bg-opacity-90 p-4 grid grid-cols-12 w-1/2 rounded-lg' onSubmit={(e)=>e.preventDefault()}>
         <input 
         ref={searchtext}
         className='p-3 m-2 col-span-10'type='text' placeholder='What would you like to watch?'/>
@@ -52,11 +51,11 @@ const GptSearchBar = () => {
         </button>
       </form>
     </div>
-    <div className='bg-black bg-opacity-80 text-white'>
+    <div className='absolute bg-black my-4 mx-2 flex flex-wrap'>
       {movielist&& (movielist?.map((m,index)=><MovieList key={index} 
       movies={m}/>))}
     </div>
-    </>
+    </div>
     
   )
 }
