@@ -64,7 +64,7 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
       <div className="">
         <img src={LOGO_IMG} alt="Logo"/>
       </div>
-      <form  className="absolute w-3/12 p-10 top-[15%]  left-[40%] right-[40%] bg-opacity-85 bg-black rounded-md">
+      <form onSubmit={(e)=>e.preventDefault()} className="absolute w-3/12 p-10 top-[15%]  left-[40%] right-[40%] bg-opacity-85 bg-black rounded-md">
         <h1 className="bold text-3xl m-2 ">{ signup ? "Sign Up" : "Sign In" }</h1>
         {signup && (<input type="text" placeholder="Full Name" className="p-3 my-2  w-full rounded-md font-thin bg-inherit"/>)}
         <input
