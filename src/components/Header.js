@@ -42,11 +42,11 @@ signOut(auth).then(() => {
 const islogin=location.pathname==="/";
 
 return (
-    <div className="absolute px-2 bg-gradient-to-b from-black w-full  flex justify-between z-10">
-        <img className="w-52 "src={BG_IMG} alt="logo"/>
+    <div className="absolute md:px-2 bg-gradient-to-b from-black md:w-full md:flex md:justify-between flex justify-between z-10 ">
+        <img className="md:w-52 w-32 mx-1"src={BG_IMG} alt="logo"/>
         {!islogin&&(<div>
-          <button onClick={handleSearch}className="m-6 text-purple-800 font-bold bg-white px-3 py-1 rounded-md text-lg">Ai Search</button>
-      <button onClick={handleSignout} className="m-6 text-red-800 font-bold bg-white px-3 py-1 rounded-md text-lg">Signout</button>
+          <button onClick={handleSearch}className="md:m-6 mx-4 my-3 text-purple-800 font-bold bg-white px-2 py-1 rounded-md md:text-lg text-sm">Ai Search</button>
+      <button onClick={handleSignout} className="md:m-6 mx-1 my-3 text-red-800 font-bold bg-white px-2 py-1 rounded-md md:text-lg text-sm">Signout</button>
       </div>)}
       </div>
 );

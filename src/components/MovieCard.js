@@ -6,7 +6,7 @@ const MovieCard = ({poster}) => {
     if(!poster) return null;
   return (
     //<div>
-      <img className="rounded-sm w-44 p-2 transition-transform duration-200 ease-out transform hover:scale-[1.2] " src={IMG_LIST_URL + poster } alt='movie poster'/>
+      <img className="rounded-sm md:w-44 w-32 md:p-2 p-1 transition-transform duration-200 ease-out transform hover:scale-[1.2] " src={IMG_LIST_URL + poster } alt='movie poster'/>
     //</div>
   )
 }

@@ -41,12 +41,12 @@ const GptSearchBar = () => {
 
   return (
     <div>
-    <div className='-mt-[45%] flex justify-center '>
-      <form className='bg-black bg-opacity-90 p-4 grid grid-cols-12 w-1/2 rounded-lg' onSubmit={(e)=>e.preventDefault()}>
+    <div className='md:-mt-[45%] flex md:justify-center -mt-[100%]'>
+      <form className='bg-black bg-opacity-90 p-4 grid grid-cols-12 md:w-1/2 rounded-lg w-[90%]' onSubmit={(e)=>e.preventDefault()}>
         <input 
         ref={searchtext}
-        className='p-3 m-2 col-span-10'type='text' placeholder='What would you like to watch?'/>
-        <button className='bg-red-700 m-2 col-span-2 rounded-lg'onClick={handleSearchclick}>
+        className='md:p-3 md:m-2 col-span-10 text-xs md:text-lg'type='text' placeholder='What would you like to watch?'/>
+        <button className='bg-red-700 md:m-2 col-span-2 m-1 rounded-lg text-xs md:text-xl'onClick={handleSearchclick}>
             Search
         </button>
       </form>
