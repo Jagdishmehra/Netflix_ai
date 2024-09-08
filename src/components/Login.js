@@ -11,15 +11,14 @@ const Login=()=>{
   const [signup,setsignup]=useState(false);
 
   const handleSignup=()=>{
+    
     setsignup(!signup);
   };
   
-
   const [message,setmessage]=useState(null)
 
   const email=useRef(null);
   const password=useRef(null);
-
 
   const handlevalidation=()=>{  
         const errmessage=valid(email.current.value, password.current.value);
@@ -63,17 +62,17 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
       <div className="relative text-white">
         <Header/>
       <div className="">
-        <img src={LOGO_IMG} alt="image"/>
+        <img src={LOGO_IMG} alt="Logo"/>
       </div>
-      <form onSubmit={(e)=>e.preventDefault()} className="absolute w-3/12 p-10 top-[15%]  left-[40%] right-[40%] bg-opacity-85 bg-black rounded-md">
+      <form onSubmit={(e)=>{e.preventDefault()}} className="absolute w-3/12 p-10 top-[15%]  left-[40%] right-[40%] bg-opacity-85 bg-black rounded-md">
         <h1 className="bold text-3xl m-2 ">{ signup ? "Sign Up" : "Sign In" }</h1>
-        {signup&&<input type="text" placeholder="Full Name" className="p-3 my-2  w-full rounded-md font-thin bg-inherit"/>}
+        {signup && (<input type="text" placeholder="Full Name" className="p-3 my-2  w-full rounded-md font-thin bg-inherit"/>)}
         <input
         ref={email} type="text" placeholder="Email" className="p-3 my-2  w-full rounded-md font-thin bg-inherit"/>
         <input 
         ref={password} type="password" placeholder="Password" className="p-3 my-2 w-full rounded-md font-thin bg-inherit"/>
         <p className="text-red-500 my-2 text-sm font-thin">{message}</p>
-        <button className="bg-red-600 w-full my-2 p-2 rounded-md hover:bg-red-700 transition duration-200 ease-in-out hover:ease-in-out text-white" onClick={handlevalidation}>{signup?"Sign Up":"Sign In"}</button>
+        <button className="bg-red-600 w-full my-2 p-2 rounded-md hover:bg-red-700 transition duration-200 ease-in-out hover:ease-in-out text-white"type="button" onClick={handlevalidation}>{signup?"Sign Up":"Sign In"}</button>
         <button className="font-thin text-md m-2 text-white"type="button" onClick={handleSignup}>{signup ? "Already a member ? Sign in" :"New to Netflix ? Sign up now"}</button> 
       </form>
       </div>
